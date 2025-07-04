@@ -23,6 +23,43 @@
 
 ## 🎯 学习路径指南
 
+### 🗺️ 整体学习策略
+
+```mermaid
+graph TB
+    subgraph "学习策略框架"
+        A[理论学习] --> B[实践编程]
+        B --> C[项目应用]
+        C --> D[总结反思]
+        D --> A
+    end
+    
+    subgraph "知识获取方式"
+        E[阅读文档] --> F[观看视频]
+        F --> G[动手实践]
+        G --> H[讨论交流]
+        H --> E
+    end
+    
+    subgraph "技能进阶路径"
+        I[基础语法] --> J[数据结构]
+        J --> K[算法设计]
+        K --> L[系统编程]
+        L --> M[项目开发]
+        M --> N[代码优化]
+    end
+    
+    A -.-> E
+    B -.-> G
+    C -.-> M
+    I -.-> A
+    
+    style A fill:#e3f2fd
+    style B fill:#e8f5e8
+    style C fill:#fff3e0
+    style D fill:#fce4ec
+```
+
 ### 🌱 初学者路径 (推荐学习顺序)
 
 ```mermaid
@@ -94,6 +131,78 @@ graph TD
 
 ## 📚 核心学习模块
 
+### 🏗️ C语言知识体系架构
+
+```mermaid
+mindmap
+  root((C语言核心))
+    基础语法
+      数据类型
+        基本类型
+        派生类型
+      运算符
+        算术运算符
+        逻辑运算符
+        位运算符
+      控制结构
+        分支语句
+        循环语句
+        跳转语句
+    数据结构
+      数组
+        一维数组
+        多维数组
+        数组初始化
+      指针
+        指针概念
+        指针运算
+        指针与数组
+        函数指针
+      结构体
+        结构体定义
+        结构体应用
+        联合体
+        枚举类型
+    内存管理
+      栈内存
+      堆内存
+      静态内存
+      动态分配
+        malloc
+        free
+        calloc
+        realloc
+    标准库
+      stdio.h
+        输入输出
+        文件操作
+      stdlib.h
+        内存管理
+        字符串转换
+      string.h
+        字符串处理
+      math.h
+        数学函数
+    编译系统
+      预处理
+        宏定义
+        头文件包含
+        条件编译
+      编译
+        语法分析
+        代码生成
+      汇编
+        机器码生成
+      链接
+        符号解析
+        地址重定位
+    调试技能
+      断点调试
+      内存检查
+      性能分析
+      错误处理
+```
+
 ### 🔤 基础语法模块
 
 | 主题 | 文档路径 | 难度 | 重要性 | 学习时间 |
@@ -144,6 +253,66 @@ graph TD
 <details>
 <summary>🎯 <strong>学习重点与难点</strong></summary>
 
+#### 🎯 学习重点与难点
+
+```mermaid
+flowchart TD
+    A[内存概念理解] --> B[指针基础]
+    B --> C[指针运算]
+    C --> D[指针与数组关系]
+    D --> E[函数指针]
+    E --> F[二级指针]
+    F --> G[指针应用实践]
+    
+    H[内存分配] --> I{分配方式}
+    I -->|静态| J[栈内存]
+    I -->|动态| K[堆内存]
+    J --> L[自动管理]
+    K --> M[手动管理]
+    M --> N[malloc/free]
+    N --> O[内存泄漏检测]
+    
+    P[数组学习] --> Q[数组定义]
+    Q --> R[数组初始化]
+    R --> S[数组访问]
+    S --> T[多维数组]
+    T --> U[数组退化为指针]
+    U --> D
+    
+    style A fill:#ffebee
+    style H fill:#e8f5e8
+    style P fill:#e3f2fd
+    style G fill:#fff3e0
+    style O fill:#fce4ec
+```
+
+#### 内存管理生命周期
+
+```mermaid
+stateDiagram-v2
+    [*] --> 声明变量
+    声明变量 --> 内存分配
+    内存分配 --> 静态分配
+    内存分配 --> 动态分配
+    
+    静态分配 --> 栈内存
+    栈内存 --> 自动释放
+    自动释放 --> [*]
+    
+    动态分配 --> 堆内存
+    堆内存 --> 使用内存
+    使用内存 --> 手动释放
+    手动释放 --> [*]
+    
+    使用内存 --> 内存泄漏 : 忘记释放
+    内存泄漏 --> 程序错误
+    程序错误 --> [*]
+    
+    使用内存 --> 野指针 : 访问已释放内存
+    野指针 --> 程序崩溃
+    程序崩溃 --> [*]
+```
+
 #### 指针学习路线图
 ```
 指针概念 → 指针运算 → 指针与数组 → 函数指针 → 二级指针 → 指针应用
@@ -172,6 +341,70 @@ graph TD
 </details>
 
 ### ⚙️ 编译系统模块
+
+```mermaid
+flowchart TD
+    A[源代码文件.c] --> B[预处理器 cpp]
+    B --> C[预处理后文件.i]
+    C --> D[编译器 cc1]
+    D --> E[汇编文件.s]
+    E --> F[汇编器 as]
+    F --> G[目标文件.o]
+    
+    H[头文件.h] --> B
+    I[库文件.a/.so] --> J[链接器 ld]
+    G --> J
+    J --> K[可执行文件]
+    
+    L[Makefile] --> M[Make工具]
+    M --> N{检查依赖}
+    N -->|需要重新编译| A
+    N -->|无需编译| K
+    
+    style A fill:#e1f5fe
+    style K fill:#c8e6c9
+    style L fill:#fff3e0
+    style B fill:#f3e5f5
+    style D fill:#f3e5f5
+    style F fill:#f3e5f5
+    style J fill:#f3e5f5
+```
+
+#### 编译阶段详解
+
+```mermaid
+graph LR
+    subgraph "预处理阶段"
+        A1[头文件展开] --> A2[宏替换]
+        A2 --> A3[条件编译]
+        A3 --> A4[删除注释]
+    end
+    
+    subgraph "编译阶段"
+        B1[词法分析] --> B2[语法分析]
+        B2 --> B3[语义分析]
+        B3 --> B4[代码优化]
+        B4 --> B5[代码生成]
+    end
+    
+    subgraph "汇编阶段"
+        C1[汇编指令] --> C2[机器码]
+    end
+    
+    subgraph "链接阶段"
+        D1[符号解析] --> D2[地址重定位]
+        D2 --> D3[库函数链接]
+    end
+    
+    A4 --> B1
+    B5 --> C1
+    C2 --> D1
+    
+    style A1 fill:#e3f2fd
+    style B1 fill:#f1f8e9
+    style C1 fill:#fff8e1
+    style D1 fill:#fce4ec
+```
 
 | 组件 | 文档路径 | 技能等级 | 应用场景 |
 |------|----------|----------|----------|
@@ -202,6 +435,69 @@ graph TD
 </details>
 
 ### 🐛 调试技能模块
+
+```mermaid
+flowchart TD
+    A[程序出现问题] --> B{问题类型}
+    
+    B -->|编译错误| C[语法检查]
+    B -->|运行时错误| D[调试器分析]
+    B -->|逻辑错误| E[代码审查]
+    B -->|性能问题| F[性能分析]
+    
+    C --> G[检查语法规则]
+    G --> H[修复语法错误]
+    
+    D --> I{错误严重程度}
+    I -->|轻微| J[VS Code调试]
+    I -->|严重| K[GDB深度调试]
+    I -->|内存相关| L[Valgrind检测]
+    
+    E --> M[断点调试]
+    M --> N[变量监控]
+    N --> O[执行流程分析]
+    
+    F --> P[时间复杂度分析]
+    P --> Q[空间复杂度分析]
+    Q --> R[代码优化]
+    
+    style A fill:#ffebee
+    style J fill:#e8f5e8
+    style K fill:#fff3e0
+    style L fill:#e3f2fd
+    style R fill:#f3e5f5
+```
+
+#### 调试工具选择决策树
+
+```mermaid
+graph TD
+    A[需要调试程序] --> B{开发环境}
+    
+    B -->|VS Code| C[集成调试器]
+    B -->|Visual Studio| D[VS调试器]
+    B -->|命令行| E[GDB调试器]
+    
+    C --> F{问题类型}
+    D --> F
+    E --> F
+    
+    F -->|基础断点调试| G[设置断点<br/>F9键]
+    F -->|变量监控| H[监视窗口<br/>变量悬停]
+    F -->|内存检查| I[内存视图<br/>十六进制显示]
+    F -->|性能分析| J[性能分析器<br/>时间统计]
+    
+    G --> K[逐步执行<br/>F10/F11]
+    H --> L[表达式求值<br/>即时窗口]
+    I --> M[内存泄漏检测<br/>Valgrind工具]
+    J --> N[热点函数识别<br/>调用图分析]
+    
+    style A fill:#e1f5fe
+    style G fill:#e8f5e8
+    style H fill:#fff3e0
+    style I fill:#fce4ec
+    style J fill:#f3e5f5
+```
 
 | 工具 | 文档路径 | 适用场景 | 学习曲线 |
 |------|----------|----------|----------|
@@ -234,6 +530,56 @@ graph TD
 
 ### 📚 标准库模块
 
+```mermaid
+graph TB
+    subgraph "输入输出库 (stdio.h)"
+        A1[printf系列] --> A2[格式化输出]
+        A3[scanf系列] --> A4[格式化输入]
+        A5[文件操作] --> A6[fopen/fclose/fread/fwrite]
+        A7[字符IO] --> A8[getchar/putchar]
+    end
+    
+    subgraph "字符串库 (string.h)"
+        B1[字符串操作] --> B2[strcpy/strcat/strcmp]
+        B3[内存操作] --> B4[memcpy/memset/memcmp]
+        B5[字符串查找] --> B6[strchr/strstr/strtok]
+    end
+    
+    subgraph "数学库 (math.h)"
+        C1[基本运算] --> C2[pow/sqrt/abs]
+        C3[三角函数] --> C4[sin/cos/tan]
+        C5[对数指数] --> C5[log/exp]
+    end
+    
+    subgraph "内存管理 (stdlib.h)"
+        D1[动态分配] --> D2[malloc/calloc/realloc/free]
+        D3[类型转换] --> D4[atoi/atof/strtol]
+        D5[随机数] --> D6[rand/srand]
+    end
+    
+    subgraph "字符处理 (ctype.h)"
+        E1[字符判断] --> E2[isalpha/isdigit/isspace]
+        E3[字符转换] --> E4[toupper/tolower]
+    end
+    
+    style A1 fill:#e3f2fd
+    style B1 fill:#e8f5e8
+    style C1 fill:#fff3e0
+    style D1 fill:#fce4ec
+    style E1 fill:#f3e5f5
+```
+
+#### 函数使用优先级
+
+```mermaid
+pie title 标准库函数使用频率
+    "输入输出函数" : 35
+    "字符串处理" : 25
+    "内存管理" : 20
+    "数学运算" : 12
+    "字符处理" : 8
+```
+
 <details>
 <summary>📖 <strong>标准头文件详解</strong></summary>
 
@@ -258,6 +604,60 @@ graph TD
 ---
 
 ## 🔧 实用工具
+
+## 🔧 实用工具
+
+### 📈 学习进度时间线
+
+```mermaid
+gantt
+    title C语言学习时间规划
+    dateFormat  YYYY-MM-DD
+    section 基础阶段
+    语法基础           :done, basic, 2024-01-01, 7d
+    数据类型          :done, datatype, after basic, 5d
+    控制结构          :done, control, after datatype, 7d
+    函数编程          :active, function, after control, 10d
+    
+    section 进阶阶段
+    数组操作          :array, after function, 7d
+    指针理解          :pointer, after array, 14d
+    结构体应用        :struct, after pointer, 7d
+    动态内存          :memory, after struct, 10d
+    
+    section 高级阶段
+    文件操作          :file, after memory, 7d
+    编译系统          :compile, after file, 10d
+    调试技能          :debug, after compile, 7d
+    项目实践          :project, after debug, 21d
+    
+    section 专项技能
+    算法与数据结构    :algorithm, after project, 30d
+    系统编程          :system, after algorithm, 30d
+```
+
+#### 学习里程碑
+
+```mermaid
+journey
+    title C语言学习历程
+    section 入门阶段
+      了解C语言特点      : 3: 学习者
+      掌握基本语法       : 4: 学习者
+      编写第一个程序     : 5: 学习者
+    section 基础阶段
+      理解数据类型       : 4: 学习者
+      掌握控制结构       : 4: 学习者
+      学会函数设计       : 5: 学习者
+    section 进阶阶段
+      理解指针概念       : 2: 学习者
+      掌握指针应用       : 4: 学习者
+      熟练内存管理       : 5: 学习者
+    section 高级阶段
+      掌握编译原理       : 4: 学习者
+      熟练调试技巧       : 5: 学习者
+      完成项目实践       : 5: 学习者
+```
 
 ### 🔍 快速搜索指南
 
@@ -397,6 +797,75 @@ C语言笔记/
 
 ### 🤔 学习中的常见问题
 
+#### 问题解决流程图
+
+```mermaid
+flowchart TD
+    A[遇到问题] --> B{问题类型识别}
+    
+    B -->|编译错误| C[检查语法]
+    B -->|运行错误| D[检查逻辑]
+    B -->|概念不理解| E[查阅文档]
+    B -->|代码不工作| F[调试分析]
+    
+    C --> G{错误信息分析}
+    G -->|语法错误| H[修正语法]
+    G -->|链接错误| I[检查库文件]
+    G -->|头文件错误| J[检查包含路径]
+    
+    D --> K{错误现象}
+    K -->|程序崩溃| L[检查指针]
+    K -->|结果错误| M[检查算法]
+    K -->|内存问题| N[检查内存管理]
+    
+    E --> O[查找相关章节]
+    O --> P[阅读示例代码]
+    P --> Q[动手实践]
+    
+    F --> R[设置断点]
+    R --> S[单步调试]
+    S --> T[观察变量值]
+    T --> U[分析执行流程]
+    
+    H --> V[重新编译测试]
+    I --> V
+    J --> V
+    L --> W[使用调试器]
+    M --> X[重新设计算法]
+    N --> Y[检查malloc/free]
+    Q --> Z[加深理解]
+    U --> AA[找到问题根源]
+    
+    V --> BB{问题解决了吗?}
+    W --> BB
+    X --> BB
+    Y --> BB
+    Z --> BB
+    AA --> BB
+    
+    BB -->|是| CC[总结经验]
+    BB -->|否| DD[寻求帮助]
+    
+    DD --> EE[查阅更多资料]
+    DD --> FF[请教他人]
+    DD --> GG[在线求助]
+    
+    style A fill:#ffebee
+    style CC fill:#e8f5e8
+    style DD fill:#fff3e0
+```
+
+#### 错误类型分析
+
+```mermaid
+pie title 常见错误类型分布
+    "指针错误" : 30
+    "语法错误" : 25
+    "逻辑错误" : 20
+    "内存错误" : 15
+    "编译错误" : 10
+```
+
 <details>
 <summary><strong>Q: 我是零基础，应该从哪里开始学习？</strong></summary>
 
@@ -516,3 +985,4 @@ C语言笔记/
 *文档状态：持续完善中*
 
 </div>
+
