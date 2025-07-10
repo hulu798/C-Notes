@@ -1,9 +1,6 @@
 # 🚀 C语言学习笔记
 
-[![Learning Progress](https://img.shields.io/badge/学习进度-持续更新-brightgreen.svg)](https://github.com)
-[![Content Quality](https://img.shields.io/badge/内容质量-优质-blue.svg)](https://github.com)
-[![Language](https://img.shields.io/badge/语言-C语言-orange.svg)](https://github.com)
-[![Difficulty](https://img.shields.io/badge/难度-初级到高级-red.svg)](https://github.com)
+[![Learning Progress](https://img.shields.io/badge/学习进度-持续更新-brightgreen.svg)](https://github.com)[![Content Quality](https://img.shields.io/badge/内容质量-优质-blue.svg)](https://github.com)[![Language](https://img.shields.io/badge/语言-C语言-orange.svg)](https://github.com)[![Difficulty](https://img.shields.io/badge/难度-初级到高级-red.svg)](https://github.com)
 
 > 📖 **一个全面、系统的C语言学习笔记集合**  
 > 🎯 **从基础语法到高级特性，从编译原理到调试技巧**  

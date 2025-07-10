@@ -26,18 +26,24 @@ int add(int x,int y)
 {
     return x+y;
 }
-```
 
-```c
 //main.c
 #include<stdio.h>
-extern int add(int,int );
+extern int add(int,int ); //int add(int ,int);也可以
 int main()
 {
     printf("%d\n",add(10,20));
 }
 ```
 
-
-
- 
+> [!tip]
+>
+> 其他源文件使用具有外部链接属性的标识符的时候需要`extern`+完整类型,不过通常来说函数在其他源文件使用的时候只需要声明函数类型即可,不必加`extern`,但是变量必须加`extern`
+>
+> ```c
+> //源文件1:
+> int a=20;
+> 
+> //源文件2:使用变量a
+> extern int a;
+> ```
