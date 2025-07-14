@@ -1,6 +1,6 @@
 # `scanf`的空白
 
-[`scanf`读取数据机制](C:\Users\Dell\Desktop\MarkDownNotes\C语言Notes\stdio.h\scanf输入数据机制.md)
+[`scanf`读取数据机制](scanf输入数据机制.md)
 
 ## `scanf()`占位符后面的空白
 
