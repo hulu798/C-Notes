@@ -13,6 +13,10 @@
 > ![image-20250714160132242](https://gitee.com/hulu135289/Typora/raw/master/img/20250714160132309.png)
 >
 > 修改为任意一种字符集就可以正常输出了,只有`auto`模式不行(前提是系统字符集已经修改为`UTF-8`)
+>
+> - 只需要修改一下`launch,json`文件即可解决
+>
+> ![image-20250718115052015](https://gitee.com/hulu135289/Typora/raw/master/img/20250718115059164.png)
 
 
 
