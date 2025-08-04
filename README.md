@@ -378,7 +378,7 @@ graph LR
 感谢所有为这个项目做出贡献的开发者！
 
 <a href="https://github.com/yourusername/C-Notes/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=yourusername/C-Notes" />
+  <img src="https://contrib.rocks/image?repo=hulu798/C-Notes" />
 </a>
 
 ---
@@ -395,10 +395,10 @@ graph LR
 
 **让我们一起构建更好的C语言学习资源** 🚀
 
-[![Star History Chart](https://api.star-history.com/svg?repos=yourusername/C-Notes&type=Date)](https://star-history.com/#yourusername/C-Notes&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=hulu798/C-Notes&type=Date)](https://star-history.com/#yourusername/C-Notes&Date)
 
 ---
 
-*最后更新：2025年8月4日* | *版本：v2.1* | *维护者：[Your Name](https://github.com/yourusername)*
+*最后更新：2025年8月4日* | *版本：v2.1* | *维护者：[Dawn](https://github.com/hulu798)*
 
 </div>
